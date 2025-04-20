@@ -2,8 +2,9 @@ import React from 'react'
 import help from './help.png'
 import { Button } from '../ui/button'
 import {ArrowUpRight} from 'lucide-react'
+import {Link } from 'react-scroll'
 
-function LandingPage() {
+function LandingPage({componentIds}) {
   return (
     <div className='flex gap-4 font-roboto h-screen'>
         <div className='w-1/2  grid place-content-center gap-10 h-80vh 
@@ -20,11 +21,17 @@ function LandingPage() {
          background-checked helpers for cleaning, cooking, childcare, laundry, and more. Whether you need
           a one-time deep clean or regular help, we make it effortless.
         </p>
-        <div className='flex justify-center items-center '>
-          <Button className='sm:p-5 rounded-full w-1/4 h-full sm:text-xl bg-slate-800 hover:bg-slate-600'>
+        <div className='flex justify-center items-center w-full'>
+          <Link
+          to={componentIds.find}
+          smooth={true}
+          duration={500}
+          >
+            <Button className='sm:p-5 rounded-full w-full h-full sm:text-xl bg-slate-800 hover:bg-slate-600'>
           Get Started
           <ArrowUpRight></ArrowUpRight>
           </Button>
+          </Link>
         </div>
         
         </div>

@@ -41,7 +41,7 @@ function Root() {
     <>
       <div className="min-h-screen grid grid-rows-[auto_1fr_auto]">
         <Navigation componentIds={componentIds}/>
-        <LandingPage id={componentIds.landing}/>
+        <LandingPage id={componentIds.landing} componentIds={componentIds}/>
         <FindHelper users={users} id={componentIds.find}/>
         <Footer id={componentIds.footer}/>
   

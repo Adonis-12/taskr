@@ -12,13 +12,13 @@ API: JSONPlaceholder (mock data) , Robohash
 
 Live Demo: Deployed Link (Add your deployment link here)
 
-🚀 Features
+#🚀 Features
 ✅ Landing Page - Introduction to the app
 ✅ Find Helper - Displays a list of helpers fetched from an API
 ✅ Navigation - Smooth scrolling between sections
 ✅ Authentication Pages - Login & Signup (UI only)
 
-🛠️ Installation & Setup
+#🛠️ Installation & Setup
 1. Clone the Repository
 bash
 git clone https://github.com/Adonis-12/taskr.git
@@ -31,10 +31,12 @@ bash
 npm run dev
 Open http://localhost:3000 in your browser.
 
-4. Build for Production
+#4. Build for Production
 bash
 npm run build
-📂 Project Structure
+
+
+#📂 Project Structure
 src/
 ├── components/
 │   ├── navigation/       # Navigation bar
@@ -46,13 +48,15 @@ src/
 ├── App.jsx               # Main app & router setup
 ├── main.jsx              # Vite entry point
 └── styles/               # Global CSS (if any)
-🔧 Key Code Implementation
+
+
+#🔧 Key Code Implementation
 1. Data Fetching (API)
 Fetches mock users from JSONPlaceholder
 
 Handles loading & error states
 
-jsx
+#jsx
 // Inside Home.jsx
 useEffect(() => {
   fetch('https://jsonplaceholder.typicode.com/users')
@@ -60,14 +64,18 @@ useEffect(() => {
     .then((data) => setUsers(data))
     .catch((err) => setError(err));
 }, []);
-2. Smooth Scrolling (react-scroll)
+
+
+#2. Smooth Scrolling (react-scroll)
 Navigation links scroll to sections smoothly
 
 jsx
 <Link to="findhelper-section" smooth={true} duration={500}>
   Find Helper
 </Link>
-3. Routing (React Router)
+
+
+#3. Routing (React Router)
 Handles /, /login, /signup routes
 
 jsx
@@ -76,7 +84,9 @@ const router = createBrowserRouter([
   { path: "/login", element: <LoginPage /> },
   { path: "/signup", element: <SignupPage /> }
 ]);
-🔗 Dependencies
+
+
+#🔗 Dependencies
 Package	Usage
 react	Core library
 react-router-dom	Routing
@@ -94,7 +104,7 @@ Push to the branch (git push origin feature/new-feature)
 
 Open a Pull Request
 
-📜 License
+#📜 License
 MIT License - Free to use and modify.
 
 📬 Contact

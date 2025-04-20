@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Mail,KeyRound , UserRound } from 'lucide-react'
 import { Input } from "../ui/input"
 import { Button } from "../ui/button"
+import {Link} from 'react-router-dom'
 
 
 const SignUp = ({onRouteChange,onloadUser}) => {
@@ -28,11 +29,11 @@ const SignUp = ({onRouteChange,onloadUser}) => {
 
     return(
         <>
-            <div className='flex justify-center items-center h-[70vh] font-light'>
-                <div className=" text-black rounded-lg border-2 border-white/20 w-sm h-full grid grid-cols-1
-                 place-content-center place-items-center h  shadow-md shadow-white/20">
+            <div className='flex justify-center items-center h-[70vh] font-light m-5'>
+                <div className=" text-black rounded-lg border w-sm h-full grid grid-cols-1
+                 place-content-center place-items-center h  shadow-md shadow-gray ">
                  <div className='m-4'>
-                    <h1 className="text-3xl">REGISTER</h1>
+                    <h1 className="text-3xl ">Sign Up</h1>
                  </div>
                 <div className="m-4 grid grid-cols-12 place-content-center place-items-center gap-2">
                     <label className=' col-span-12 '>Name</label>
@@ -52,6 +53,10 @@ const SignUp = ({onRouteChange,onloadUser}) => {
                 </div>    
                     
                     <Button className=" hover:cursor-pointer"  >Submit</Button>
+                    <div className='flex justify-center items-center gap-2 mt-5 text-sm text-slate-600'>
+                    <p>Already have an account?</p>
+                        <Link to='/login'><p className='text-blue-900 underline underline-offset-4'>Login</p></Link>
+                </div>
                 </div>
             </div>
         </>

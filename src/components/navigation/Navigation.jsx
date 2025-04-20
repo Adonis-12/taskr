@@ -1,9 +1,11 @@
 import React from 'react'
 import logo from './logo.png'
 import { Button } from "@/components/ui/button"
+import { NavLink} from 'react-router-dom'
+import  {Link } from 'react-scroll'
 
 
-function Navigation() {
+function Navigation({componentIds}) {
   return (
    <>
     <div className='font-roboto border-2 border-blue-100/50 m-5  rounded-lg shadow-lg grid text-gray-800 grid-cols-12 content-center place-content-center 
@@ -15,14 +17,26 @@ function Navigation() {
     </div>
     <div className='col-span-4 flex  items-center justify-center'>
       <ul className='flex gap-4 justify-start items-center '>
-                <li className=' hover:text-slate-500 hover:underline hover:underline-offset-2 cursor-pointer'>Home</li>
-                <li className=' hover:text-slate-500 hover:underline hover:underline-offset-2 cursor-pointer'>Services</li>
-                 <li className=' hover:text-slate-500 hover:underline hover:underline-offset-2 cursor-pointer'>Contact</li>
+                <Link
+                to={componentIds.landing} 
+                smooth={true}
+                duration={500}
+                ><li className=' hover:text-slate-500 hover:underline hover:underline-offset-2 cursor-pointer'>Home</li></Link>
+                <Link
+                to={componentIds.find} 
+                smooth={true}
+                duration={500}
+                ><li className=' hover:text-slate-500 hover:underline hover:underline-offset-2 cursor-pointer'>Services</li></Link>
+                <Link
+                to={componentIds.footer} 
+                smooth={true}
+                duration={1000}
+                ><li className=' hover:text-slate-500 hover:underline hover:underline-offset-2 cursor-pointer'>Contact</li></Link>
             </ul>
     </div>
     <div className='col-span-4 flex  items-center justify-end m-2 gap-4'>
-        <a href='../login'><Button variant="outline">Login</Button></a>
-        <a><Button variant="outline" className='bg-slate-800 text-white hover:bg-slate-600 hover:text-ehite'>Signup</Button></a>
+        <NavLink to='/login'><Button variant="outline">Login</Button></NavLink>
+        <NavLink to='/signup' ><Button variant="outline" className='bg-slate-800 text-white hover:bg-slate-600 hover:text-white'>Signup</Button></NavLink>
     </div>
     </div>
    </>

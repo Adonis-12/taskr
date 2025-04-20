@@ -4,10 +4,10 @@ import HelperProfile from '../helperProfile/HelperProfile'
 import Profile from '../profile/Profile'
 
 
-function FindHelper({users}) {
-  console.log(users,"1")
-  return (
-    <div className='h-screen  motion-opacity-in-0 motion-translate-x-in-10 motion-blur-in-md motion-duration-[2s]'>
+function FindHelper({users,id}) {
+  console.log(users,"findhelper")
+  return ( 
+    <div className='h-screen  motion-opacity-in-0 motion-translate-x-in-10 motion-blur-in-md motion-duration-[2s] m-5' id={id}>
         <div className='flex justify-center mt-10'>
             <h1 className='text-5xl font-goth text-slate-800'>Find a helper</h1>
         </div>
@@ -18,7 +18,7 @@ function FindHelper({users}) {
         <div className='w-full'>
         {users.map((user) => {
           return (
-             <div className='flex mt-10 gap-5 p-5 border m-5'> 
+             <div className='flex mt-10 gap-5 p-5 border m-5' key={user.id}> 
              <div className='w-50 h-50 '>
                 <Profile name={user.id}/>
              </div>

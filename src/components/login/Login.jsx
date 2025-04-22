@@ -3,14 +3,14 @@ import Navigation from '../navigation/Navigation'
 import { Mail,KeyRound } from 'lucide-react'
 import { Input } from "../ui/input"
 import { Button } from "../ui/button"
-import {Link } from 'react-router-dom'
+import {Link , NavLink ,useParams } from 'react-router-dom'
+import NotFound from '../notfound/NotFound'
 
 
 
 const Login = () => {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
-
     const onSignInEmail = (e) => {
         setEmail(e.target.value);
     }
@@ -18,18 +18,42 @@ const Login = () => {
     const onSignInPassword = (e) => {
         setPassword(e.target.value);
     } 
+ 
+
+    const {userType} = useParams()
     
+        const header = userType==='user'?'Login as user':'Login as helper'
 
     return(
         <>
-            <div className='flex justify-center items-center h-[60vh] font-light m-5 '>
+            <div className='flex justify-center items-center h-auto font-light m-5 font-robo
+            bg-gradient-to-r from-[#E5FCFF] via-[#E5FCFF] to-[#FDFFFC] via-[19%] to-[75%]'>
                 <div className=" text-black rounded-lg border w-sm h-full grid grid-cols-1
-                 place-content-center place-items-center h  shadow-md shadow-gray ">
+                 place-content-center place-items-center h  shadow-md shadow-gray m-5">
                  <div className='m-5'>
-                    <h1 className="text-3xl">LOGIN</h1>
+                    <h1 className="text-3xl font-bold">{header}</h1>
+                 </div>
+                 <div className='flex gap-5 '>
+
+                    <NavLink to='/login/user'
+                    className={({isActive}) => {
+                       return  isActive?'border-2 shadow-md shadow-gray hover:scale-102 hover:duration-100 rounded-full bg-black text-white flex items-center p-3 cursor-pointer' 
+                       : 'border-2 rounded-full p-2 flex items-center cursor-pointer hover:scale-102 text-slate-600'
+                    }}>
+                    <button className='cursor-pointer'>Login as user</button>
+                    </NavLink>
+
+                    <NavLink 
+                    to='/login/helper' 
+                    className={(({isActive}) => {
+                        return isActive?'border-2 shadow-md shadow-gray hover:scale-102 hover:duration-300 rounded-full bg-black text-white flex items-center p-3 cursor-pointer' 
+                       : 'border-2 rounded-full p-2 flex items-center cursor-pointer hover:scale-102 text-slate-600'
+                    })}>
+                   <button className='cursor-pointer'>Login as helper</button>
+                    </NavLink>
                  </div>
                 <div className="m-5 grid grid-cols-12 place-content-center place-items-center gap-2">
-                    <label className=' col-span-12 '>Email</label>
+                    <label className=' col-span-12 font-bold'>Email</label>
                     <Mail />
                     <Input 
                     type="email" 
@@ -39,7 +63,7 @@ const Login = () => {
 
                 </div>
                 <div className="m-5 grid grid-cols-12 place-content-center place-items-center gap-2">
-                    <label className=' col-span-12 '>Password</label>
+                    <label className=' col-span-12 font-bold'>Password</label>
                     <KeyRound />
                     <Input type="password" id="password" placeholder="Password" onChange={onSignInPassword}  className='m-2 col-span-10'/>
                 </div>    
@@ -47,7 +71,7 @@ const Login = () => {
 
                 <div className='flex justify-center items-center gap-2 mt-5 text-sm text-slate-600'>
                     <p>Don't have an account?</p>
-                        <Link to='/signup'><p className='text-blue-900 underline underline-offset-4'>Sign Up</p></Link>
+                        <Link to='/signup/user'><p className='text-blue-900 underline underline-offset-4'>Sign Up</p></Link>
                 </div>
                 </div>
                 
@@ -56,4 +80,6 @@ const Login = () => {
     )
 }
 
+    
+   
 export default Login

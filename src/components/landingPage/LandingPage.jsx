@@ -27,7 +27,7 @@ function LandingPage({componentIds}) {
           smooth={true}
           duration={500}
           >
-            <Button className='sm:p-5 rounded-full w-full h-full sm:text-xl bg-slate-800 hover:bg-slate-600'>
+            <Button className='sm:p-5 rounded-full w-full h-full sm:text-xl bg-slate-800 hover:bg-slate-600 cursor-pointer'>
           Get Started
           <ArrowUpRight></ArrowUpRight>
           </Button>

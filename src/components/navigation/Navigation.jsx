@@ -20,6 +20,7 @@ function Navigation({componentIds}) {
                 <Link
                 to={componentIds.landing} 
                 smooth={true}
+                horizontal={true} 
                 duration={500}
                 ><li className=' hover:text-slate-500 hover:underline hover:underline-offset-2 cursor-pointer'>Home</li></Link>
                 <Link
@@ -35,8 +36,8 @@ function Navigation({componentIds}) {
             </ul>
     </div>
     <div className='col-span-4 flex  items-center justify-end m-2 gap-4'>
-        <NavLink to='/login'><Button variant="outline">Login</Button></NavLink>
-        <NavLink to='/signup' ><Button variant="outline" className='bg-slate-800 text-white hover:bg-slate-600 hover:text-white'>Signup</Button></NavLink>
+        <NavLink to='/login/user'><Button variant="outline">Login</Button></NavLink>
+        <NavLink to='/signup/user' ><Button variant="outline" className='bg-slate-800 text-white hover:bg-slate-600 hover:text-white'>Signup</Button></NavLink>
     </div>
     </div>
    </>

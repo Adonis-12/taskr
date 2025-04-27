@@ -9,6 +9,7 @@ import SignUp from './components/signup/SignUp';
 import Home from './components/home/Home';
 import LoginNav from "./components/loginnav/LoginNav";
 import NotFound from "./components/notfound/NotFound";
+import UserDashboard from "./components/userdashboard/UserDashboard";
 
 const App = () => {
 
@@ -39,6 +40,9 @@ const App = () => {
       <Home />
     </div>
     </>},
+    {
+      path:'/dashboard/:id',element:<UserDashboard />
+    },
     {
       path:'*', element:
       <NotFound />

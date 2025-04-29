@@ -21,10 +21,10 @@ A modern web platform connecting homeowners with trusted local service providers
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/homehelper.git
+git clone https://github.com/yourusername/taskr.git
 
 # Navigate to project directory
-cd homehelper
+cd taskr
 
 # Install dependencies
 npm install

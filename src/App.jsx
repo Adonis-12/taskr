@@ -24,24 +24,14 @@ const App = () => {
     {path: '/', element: <Root />
       
     },
-    {path:'/login/:userType',element: <>
+    {path:'/login/:userType',element:<Login />
     
-    <div className="grid grid-cols-1 place-content-center h-screen">
-      <LoginNav  />
-      <Login />
-      <Home />
-     
-    </div>
-    </>},
-    {path:'/signup/:userType',element:<>
-      <div className="grid grid-cols-1 place-content-center h-screen">
-      <LoginNav  />
-      <SignUp />
-      <Home />
-    </div>
-    </>},
+    },
+    {path:'/signup/:userType',element:<SignUp />
+    
+    },
     {
-      path:'/dashboard/:id',element:<UserDashboard />
+      path:'/dashboard/:module',element:<UserDashboard />
     },
     {
       path:'*', element:

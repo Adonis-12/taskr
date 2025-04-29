@@ -1,11 +1,17 @@
 import React, { useState } from 'react'
-import { Mail,KeyRound , UserRound } from 'lucide-react'
+
+import { Mail,KeyRound , UserRound, MapPinHouse,Building2, Notebook,Tally4,Flag  } from 'lucide-react'
+import { FaRegAddressCard } from "react-icons/fa";
 import { Input } from "../ui/input"
 import { Button } from "../ui/button"
 import {Link ,NavLink ,useParams} from 'react-router-dom'
+import LoginNav from '../loginnav/LoginNav'
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 
 
-const SignUp = ({onRouteChange,onloadUser}) => {
+
+const SignUp = () => {
 
     const [name,setName] = useState('')
     const [email,setEmail] = useState('');
@@ -19,10 +25,13 @@ const SignUp = ({onRouteChange,onloadUser}) => {
 
     return(
         <>
-            <div className='flex justify-center items-center h-auto font-light m-5 font-robo
-            bg-gradient-to-r from-[#E5FCFF] via-[#E5FCFF] to-[#FDFFFC] via-[19%] to-[75%]'>
-                <div className=" text-black rounded-lg border w-sm h-full grid grid-cols-1
-                 place-content-center place-items-center h  shadow-md shadow-gray m-5">
+        <form>
+         <div>
+                <Link to='/'><LoginNav /></Link>
+            </div>
+            <div className='flex justify-center items-center h-auto font-light m-5 font-robo'>
+                <div className=" text-black rounded-lg  h-full grid grid-cols-1
+                 place-content-center place-items-center h  ">
                  <div className='m-4'>
                     <h1 className="text-3xl ">Sign Up as {userType}</h1>
                  </div>
@@ -47,30 +56,62 @@ const SignUp = ({onRouteChange,onloadUser}) => {
                     </NavLink>
                  </div>
 
-                <div className="m-4 grid grid-cols-12 place-content-center place-items-center gap-2">
-                    <label className=' col-span-12 '>Name</label>
-                        <UserRound />
-                    <Input type="text" id="name" placeholder="Email" className="m-2 col-span-10" />
-                </div>
-                <div className="m-4 grid grid-cols-12 place-content-center place-items-center gap-2">
-                    <label className=' col-span-12 '>Email</label>
-                        <Mail />
-                    <Input type="email" id="email" placeholder="Email" className="m-2 col-span-10"  />
-                </div>
+               <div className='flex justify-center mt-5 gap-7'>
+                        <div className='flex items-center gap-3'>
+                           <UserRound /><Input placeholder="First Name"  className="border border-gray-400 mt-2"/>
+                        </div>
+                        <div className='flex items-center gap-3'>
+                        <UserRound /><Input placeholder="Last Name"  className="border border-gray-400 mt-2"/>
+                        </div>
+                   </div>
+               
+                   <div className='w-full mt-5 flex items-center gap-3'>
+                     <Mail /><Input type='email' placeholder='Email' required className="border border-gray-400 mt-2"/>
+                   </div>
+               
+                   <div className='w-full mt-5'>
+                     
+                     <PhoneInput 
+                        defaultCountry='india'
+                     />
+                   </div>
+               
+                   <div className='w-full mt-5 flex items-center gap-3'>
+                     
+                   <MapPinHouse /><Input type='text' placeholder='Address'  required className="border border-gray-400 mt-2"/>
+                   </div>
+               
+                   <div className='flex justify-center mt-5 gap-7'>
+                        <div className='flex items-center gap-3'>
                 
-                <div className="m-4 grid grid-cols-12 place-content-center place-items-center gap-2">
-                    <label className=' col-span-12 '>Password</label>
-                        <KeyRound />
-                    <Input type="password" id="password" placeholder="Password"  className='m-2 col-span-10'  />
-                </div>    
+                           <Building2 /><Input placeholder="City"  className="border border-gray-400 mt-2"/>
+                        </div>
+                        <div className='flex items-center gap-3'>
                     
-                    <Button className=" hover:cursor-pointer"  >Submit</Button>
+                           <Notebook /><Input placeholder="State"  className="border border-gray-400 mt-2"/>
+                        </div>
+                   </div>
+               
+                   <div className='flex justify-center mt-5 gap-7'>
+                        <div className='flex items-center gap-3'>
+                           
+                           <Tally4></Tally4><Input placeholder="Zip code"  className="border border-gray-400 mt-2"/>
+                        </div>
+                        <div className='flex items-center gap-3'>
+                           
+                           <Flag /><Input placeholder="Country"  className="border border-gray-400 mt-2"/>
+                        </div>
+                   </div>
+                    
+                    <Button className=" hover:cursor-pointer mt-5" >Submit</Button>
                     <div className='flex justify-center items-center gap-2 mt-5 text-sm text-slate-600 '>
                     <p>Already have an account?</p>
                         <Link to='/login/user'><p className='text-blue-900 underline underline-offset-4'>Login</p></Link>
                 </div>
                 </div>
             </div>
+        </form>
+            
         </>
     )
 }

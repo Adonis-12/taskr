@@ -5,6 +5,7 @@ import { Input } from "../ui/input"
 import { Button } from "../ui/button"
 import {Link , NavLink ,useParams } from 'react-router-dom'
 import NotFound from '../notfound/NotFound'
+import LoginNav from '../loginnav/LoginNav'
 
 
 
@@ -26,10 +27,12 @@ const Login = () => {
 
     return(
         <>
-            <div className='flex justify-center items-center h-auto font-light m-5 font-robo
-            bg-gradient-to-r from-[#E5FCFF] via-[#E5FCFF] to-[#FDFFFC] via-[19%] to-[75%]'>
-                <div className=" text-black rounded-lg border w-sm h-full grid grid-cols-1
-                 place-content-center place-items-center h  shadow-md shadow-gray m-5">
+                <div>
+                    <Link to='/'><LoginNav /></Link>
+                </div>
+`               <div className='flex justify-center items-center  h-9/10  font-light m-5 font-robo flex-col'>
+                <div className=" text-black  w-full h-full grid grid-cols-1
+                 place-content-center place-items-center h   m-5">
                  <div className='m-5'>
                     <h1 className="text-3xl font-bold">{header}</h1>
                  </div>
@@ -67,15 +70,17 @@ const Login = () => {
                     <KeyRound />
                     <Input type="password" id="password" placeholder="Password" onChange={onSignInPassword}  className='m-2 col-span-10'/>
                 </div>    
-                    <Button className=" hover:cursor-pointer" >Submit</Button>
+                <Button className=" hover:cursor-pointer " >Submit</Button>
 
                 <div className='flex justify-center items-center gap-2 mt-5 text-sm text-slate-600'>
                     <p>Don't have an account?</p>
                         <Link to='/signup/user'><p className='text-blue-900 underline underline-offset-4'>Sign Up</p></Link>
                 </div>
                 </div>
-                
-            </div>
+            
+        </div>
+    
+            
         </>
     )
 }

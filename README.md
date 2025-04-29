@@ -1,45 +1,75 @@
-##Getting Started
-Clone the repository:
+
+# Taskr
+
+
+A modern web platform connecting homeowners with trusted local service providers for plumbing, electrical work, cleaning, and other home services.
+
+
+
+
+
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js (v16 or higher recommended)
+- npm (v8 or higher) or yarn
+
+
+
+
+### Installation
+```bash
+# Clone the repository
 git clone https://github.com/yourusername/homehelper.git
 
-Navigate to the project directory:
+# Navigate to project directory
 cd homehelper
 
-Install dependencies:
+# Install dependencies
 npm install
 
-Start the development server:
+# Start development server
 npm run dev
 
-Build for production:
-npm run build
+```
+
+#### Tech Stack
+
+ 
+Frontend:
+
+⚡ Vite - Next-gen frontend tooling
+
+⚛️ React 18 - JavaScript library for building UIs
+
+🎨 Tailwind CSS - Utility-first CSS framework
+
+🔄 React Router 6 - Client-side routing
+
+Key Libraries:
+
+📝 React Hook Form - Form validation
+
+🌐 React International Phone - Phone number input
+
+✨ Lucide React - Beautiful icons
 
 
-Key Features
-User authentication (login/signup)
+## Contributing
 
-Service provider search with filters
+We welcome contributions! Please follow these steps:
 
-Booking management system
+Fork the project
 
-Rating and review system
+Create your feature branch (git checkout -b feature/AmazingFeature)
 
-Responsive design for all devices
+Commit your changes (git commit -m 'Add some AmazingFeature')
 
-Dependencies
-React 18
+Push to the branch (git push origin feature/AmazingFeature)
 
-Vite 4
+Open a Pull Request
 
-React Router 6
-
-Tailwind CSS 3
-
-Lucide React (icons)
-
-React Hook Form (form validation)
-
-React International Phone (phone input)
 
 Project Structure
 src/

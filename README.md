@@ -71,21 +71,5 @@ Push to the branch (git push origin feature/AmazingFeature)
 Open a Pull Request
 
 
-Project Structure
-src/
-├── components/  # Reusable UI components
-├── pages/       # Application screens
-├── routes/      # Navigation configuration
-├── assets/      # Images, fonts
-├── utils/       # Helper functions
-├── App.jsx      # Root component
-└── main.jsx     # Entry point
-Credits
-UI Components: ShadCN UI
 
-Icons: Lucide React
-
-Form Handling: React Hook Form
-
-International Phone Input: react-international-phone
 
